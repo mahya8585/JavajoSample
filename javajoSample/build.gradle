@@ -1,0 +1,58 @@
+group 'jp.javajo'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'idea'
+apply plugin: 'war'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE'
+    }
+}
+
+war {
+    baseName = 'javajo'
+    manifest {
+        attributes 'Main-Class': 'jp.javajo'
+    }
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    providedRuntime
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web:1.3.3.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-websocket:1.3.5.RELEASE'
+    compile 'org.webjars:jquery:2.1.4'
+
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:1.3.3.RELEASE'
+
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.springframework:spring-test:2.5'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.12'
+}
