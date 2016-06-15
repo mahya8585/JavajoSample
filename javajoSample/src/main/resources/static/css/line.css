@@ -1,10 +1,6 @@
-.wrapper{
-     margin: 5px auto;
-     width:96%;
-}
-
 .message_box, .other_message_box{
-     width:96%;
+     width:99%;
+     font-size: 20px;
 }
 
 .message_box{
@@ -27,11 +23,11 @@
 .message_cs, .other_message_cs {
      position: relative;
      display: inline-block;
-     padding: 3%;
-     width: 85%;
-     margin-left:3%;
-     margin-top: 3px;
-     margin-bottom: 25px;
+     padding: 0.5%;
+     width: 90%;
+     margin-left:1%;
+     margin-top: 1px;
+     margin-bottom: 1px;
      color: #000;
      border-radius: 10px;
 }

@@ -19,7 +19,15 @@ $(function(){
                         + "<div class='message_cs'>" + $("#message").val() + "</div>"
 
         ws.send(messageBox);
-        $("#message").val("")
+        $("#message").val("");
+
+        //最新メッセージを表示(メッセージ直下の要素へ移動)
+        setTimeout(function() {
+            window.scroll(0,$(document).height());
+        },0);
+
         return false;
     });
+
+
 });
