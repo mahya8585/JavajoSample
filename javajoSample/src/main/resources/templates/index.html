@@ -2,35 +2,29 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8"/>
-    <title>Java女子部サンプルアプリ</title>
-    <script type="text/javascript" src="/webjars/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
-            $(function(){
-                var ws = new WebSocket("ws://localhost:8080/echo");
-                ws.onopen = function(){
-                };
-                ws.onclose = function(){
-                };
-                ws.onmessage = function(message){
-                    $("#result").append(message.data).append("<br />");
-                };
-                ws.onerror = function(event){
-                    alert("接続失敗");
-                };
-                $("#form").submit(function(){
-                    ws.send($("#message").val());
-                    $("#message").val("")
-                    return false;
-                });
-            });
 
-    </script>
+    <title>Java女子部サンプルアプリ</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/javajoSample.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/line.css"/>
+
+    <script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/wsSettings.js"></script>
 </head>
+
 <body>
-<div id="result"></div>
-<form id="form" action="#">
-    <input type="text" id="message" />
-    <input type="submit" value="送信" />
-</form>
+<div class="wrapper">
+
+    <div id="result"></div>
+    <div class="blank"></div>
+    <form id="form" action="#">
+        <span>なまえ：</span>
+        <input type="text" id="name"/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>めっせーじ：</span>
+        <input type="text" id="message"/>
+        <input type="submit" value="送信"/>
+    </form>
+
+</div>
 </body>
 </html>
