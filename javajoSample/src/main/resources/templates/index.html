@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>Java女子部サンプルアプリ</title>
     <script type="text/javascript" src="/webjars/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">
@@ -12,7 +12,7 @@
                 ws.onclose = function(){
                 };
                 ws.onmessage = function(message){
-                    $("#result").append(message.data).append("<br>");
+                    $("#result").append(message.data).append("<br />");
                 };
                 ws.onerror = function(event){
                     alert("接続失敗");
@@ -23,13 +23,14 @@
                     return false;
                 });
             });
-        </script>
+
+    </script>
 </head>
 <body>
 <div id="result"></div>
 <form id="form" action="#">
-    <input type="text" id="message">
-    <input type="submit" value="送信">
+    <input type="text" id="message" />
+    <input type="submit" value="送信" />
 </form>
 </body>
 </html>
