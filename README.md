@@ -1,2 +1,3 @@
-# JavajoSample
-2016年6月のJava女子部イベントで使用するサンプルアプリ
+# WebSocket色々あそぶ部屋
+2016年6月のJava女子部イベントで使用するサンプルアプリがあったり、
+Tornadoを使ったWebSocket研究のコードがあったり。
