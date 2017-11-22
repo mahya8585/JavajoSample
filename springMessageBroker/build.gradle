@@ -1,0 +1,61 @@
+group 'ws-mb-sample'
+version '1.0'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
+
+//Azure WebApps用
+war {
+    baseName = 'ROOT'
+    manifest {
+        attributes 'Main-Class': 'sample'
+    }
+}
+
+jar {
+    baseName = 'sample'
+    manifest {
+        attributes 'Main-Class': 'sample'
+    }
+}
+
+configurations {
+    providedRuntime
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-websocket'
+
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+}
+
+bootRun {
+    addResources = true
+}
